@@ -54,6 +54,56 @@ const prisma = new PrismaClient();
       });
   
       console.log('Create 4 explorers');
+
+
+
+      const woopaa = await prisma.explorers_2.upsert({
+        where: { name: 'Woopa' },
+        update: {},
+        create: {
+          name: 'Woopa',
+            lang: 'espanol',
+            missionCommander: 'Carlo',
+            enrollments: 5,
+            hasCertification: true
+        },
+      });
+  
+      const woopaa1 = await prisma.explorers_2.upsert({
+        where: { name: 'Woopa1' },
+        update: {},
+        create: {
+          name: 'Woopa1',
+            lang: 'espanol',
+            missionCommander: 'Carlo',
+            enrollments: 3,
+            hasCertification: true
+        },
+      });
+  
+      const woopaa2 = await prisma.explorers_2.upsert({
+        where: { name: 'Woopa2' },
+        update: {},
+        create: {
+          name: 'Woopa',
+            lang: 'espanol',
+            missionCommander: 'Carlo',
+            enrollments: 1,
+            hasCertification: false
+        },
+      });
+  
+      const carloss = await prisma.explorers_2.upsert({
+        where: { name: 'Carlos' },
+        update: {},
+        create: {
+          name: 'Carlos',
+            lang: 'espanol',
+            missionCommander: 'Carlo',
+            enrollments: 10,
+            hasCertification: true
+        },
+      });
   } catch(e) {
     console.error(e);
     process.exit(1);
